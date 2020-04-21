@@ -16,12 +16,18 @@ nav .brand-logo {
 }
 
 .main .section{
-  max-height: 200px;
+  max-height: 400px;
 }
-.main button{
+.main .btn{
   height: 60px;
   width: 180px;
   border-radius: 10px;
+  font-size: 100%;
+  text-align: center;
+  margin: auto;
+  line-height: 22px;
+ 
+  /* padding-top: 5px; */
   /* background: #ffffff; */
   /* color: #ffffff */
 }

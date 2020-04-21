@@ -1,6 +1,8 @@
 import React,{useEffect} from 'react';
 import './Main.css';
 import M from 'materialize-css';
+import {Link} from 'react-router-dom';
+import Footer from './ui/Footer';
 
 const Main=()=>{
   useEffect(()=>{
@@ -39,10 +41,10 @@ const Main=()=>{
                   <h5 className="center  black-text">For Employers</h5>
                   <br/>
                  <div className="col m6 nav-btn">
-                   <button className="btn">POST A JOB</button>
+                   <a className="btn">POST A JOB</a>
                  </div>
                  <div className="col m6 nav-btn">
-                   <button className="btn">BROWSE TALENT</button>
+                   <Link to="/browse/talent" className="btn">BROWSE TALENT</Link>
                  </div>
                 </div>
               </div>
@@ -52,10 +54,10 @@ const Main=()=>{
                   <h5 className="center black-text">For Talent</h5>
                   <br/>
                   <div className="col m6 nav-btn">
-                   <button className="btn">ADD YOURSELF</button>
+                   <a href="#"className="btn">ADD YOURSELF</a>
                  </div>
                  <div className="col m6 nav-btn">
-                   <button className="btn">BROWSE OPEN ROLES</button>
+                   <Link to="/browse/roles" className="btn">BROWSE OPEN ROLES</Link>
                  </div>
                 </div>
               </div>
@@ -71,8 +73,9 @@ const Main=()=>{
               </div>
               
 
-            
+            {/* <Footer></Footer> */}
         </div>
+        
     )
 }
 
