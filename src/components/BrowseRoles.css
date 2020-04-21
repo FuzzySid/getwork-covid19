@@ -1,0 +1,16 @@
+.browse_roles .title-box{
+    margin-top: 20px;
+}
+.table{
+    overflow-x: scroll;
+    overflow-y: scroll;
+    width: 1000px;
+    height: 400px;
+    background: #ffffff;
+}
+
+th,tr{
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+}
