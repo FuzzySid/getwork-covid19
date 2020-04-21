@@ -79,7 +79,7 @@ const BrowseTalent=()=>{
       </table>
             </div>
 
-                   <div id="add-talent" class="modal">
+    <div id="add-talent" class="modal">
     <div class="modal-content">
     <div className="row">
         <form className="col s12">
@@ -89,8 +89,19 @@ const BrowseTalent=()=>{
               <label htmlFor="name">Name</label>
             </div>
             <div className="input-field col s6">
-              <input id="status" type="text" className="validate" />
-              <label htmlFor="status">status</label>
+            <div className="col s6">
+            <label>
+                <input name="group1" type="radio" />
+                <span>Working</span>
+            </label>
+            </div>
+           <div className="col s6">
+           <label>
+                <input name="group1" type="radio"/>
+                <span>Student</span>
+           </label>
+           </div>
+            
             </div>
           </div>
           <div className="row">
@@ -123,25 +134,34 @@ const BrowseTalent=()=>{
             </div>
           </div>
           <div className="row">
-            <div className="input-field col s12">
-              <input  id="relocate" type="text" className="validate" />
-              <label htmlFor="relocate">Open to relocating?</label>
+            <div className="input-field col s6">
+            <label>
+                <input type="checkbox" class="filled-in" />
+                <span>Open to relocating?</span>
+            </label>
+              
+            </div>
+         
+            <div className="input-field col s6">
+                    <div class="file-field input-field">
+                    <div class="btn">
+                        <span>LinkedIn URL/Resume</span>
+                        <input type="file"/>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text"/>
+                    </div>
+                </div>
+           
             </div>
           </div>
           <div className="row">
-            <div className="input-field col s12">
-              <input  id="resume" type="text" className="validate" />
-              <label htmlFor="resume">LinkedIn URL/Resume</label>
-            </div>
-          </div>
-          <div className="row">
-            <div className="input-field col s12">
+            <div className="input-field col s6">
               <input  id="email" type="text" className="validate" />
               <label htmlFor="email">Email</label>
             </div>
-          </div>
-          <div className="row">
-            <div className="input-field col s12">
+         
+            <div className="input-field col s6">
               <input  id="Phone" type="number" className="validate" />
               <label htmlFor="Phone">Phone No.</label>
             </div>

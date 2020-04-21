@@ -40,7 +40,7 @@ nav .brand-logo {
 .text-bold{
   font-weight: 400;
 }
-.main .btn{
+/* .main .btn{
   height: 60px;
   width: 100%;
   border-radius: 10px;
@@ -49,10 +49,8 @@ nav .brand-logo {
   margin: auto;
   line-height: 22px;
  
-  /* padding-top: 5px; */
-  /* background: #ffffff; */
-  /* color: #ffffff */
-}
+  
+} */
 .main h5{
   font-weight: 500;
 }

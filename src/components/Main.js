@@ -63,7 +63,7 @@ const Main=()=>{
             
             </div>
             <div class="card-action">
-              <a href="#">ADD YOURSELF</a>
+              <a href="#add-talent" className="modal-trigger">ADD YOURSELF</a>
               <Link to="/browse/roles" >BROWSE OPEN ROLES</Link>
             </div>
           </div>
@@ -105,6 +105,101 @@ const Main=()=>{
             <div className="input-field col s12">
               <input  id="job-link" type="text" className="validate" />
               <label htmlFor="job-link">Job Posting Link</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
+  <div id="add-talent" class="modal">
+    <div class="modal-content">
+    <div className="row">
+        <form className="col s12">
+          <div className="row">
+            <div className="input-field col s6">
+              <input  id="name" type="text" className="validate" />
+              <label htmlFor="name">Name</label>
+            </div>
+            <div className="input-field col s6">
+            <div className="col s6">
+            <label>
+                <input name="group1" type="radio" />
+                <span>Working</span>
+            </label>
+            </div>
+           <div className="col s6">
+           <label>
+                <input name="group1" type="radio"/>
+                <span>Student</span>
+           </label>
+           </div>
+            
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <input  id="college-name" type="text" className="validate" />
+              <label htmlFor="college-name">College Name</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s6">
+              <input id="Specialization" type="password" className="validate" />
+              <label htmlFor="Specialization">Specialization</label>
+            </div>
+          
+            <div className="input-field col s6">
+              <input id="Sector" type="text" className="validate" />
+              <label htmlFor="Sector">Sector</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <input  id="Role" type="text" className="validate" />
+              <label htmlFor="Role">Job Posting Link</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <input  id="Location" type="text" className="validate" />
+              <label htmlFor="Location">Location</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s6">
+            <label>
+                <input type="checkbox" class="filled-in" />
+                <span>Open to relocating?</span>
+            </label>
+              
+            </div>
+         
+            <div className="input-field col s6">
+                    <div class="file-field input-field">
+                    <div class="btn">
+                        <span>LinkedIn URL/Resume</span>
+                        <input type="file"/>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text"/>
+                    </div>
+                </div>
+           
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s6">
+              <input  id="email" type="text" className="validate" />
+              <label htmlFor="email">Email</label>
+            </div>
+         
+            <div className="input-field col s6">
+              <input  id="Phone" type="number" className="validate" />
+              <label htmlFor="Phone">Phone No.</label>
             </div>
           </div>
         </form>
