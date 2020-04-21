@@ -50,7 +50,7 @@ const Main=()=>{
             
             </div>
             <div class="card-action">
-              <a href="#">POST A JOB</a>
+              <a class="modal-trigger" href="#job-post">POST A JOB</a>
               <Link to="/browse/talent" >BROWSE TALENT</Link>
                 
             </div>
@@ -70,38 +70,51 @@ const Main=()=>{
         </div>
       </div>  
                 
-        {/* <div className="container">
-          <div className="section">
-        
-            <div className="row">
-              <div className="col s12 m6">
-                <div className="icon-block">
-                  <h6 className="center  black-text">For Employers</h6>
-                  <br/>
-                 <div className="col m6 nav-btn">
-                   <a className="btn">POST A JOB</a>
-                 </div>
-                 <div className="col m6 nav-btn">
-                   <Link to="/browse/talent" className="btn">BROWSE TALENT</Link>
-                 </div>
-                </div>
-              </div>
-              <div className="col s12 m6 center-align">
-                <div className="icon-block">
-                  <h6 className="center black-text">For Talent</h6>
-                  <br/>
-                  <div className="col m6 nav-btn">
-                   <a href="#"className="btn">ADD YOURSELF</a>
-                 </div>
-                 <div className="col m6 nav-btn">
-                   <Link to="/browse/roles" className="btn">BROWSE OPEN ROLES</Link>
-                 </div>
-                </div>
-              </div>
-         
+      <div id="job-post" class="modal">
+    <div class="modal-content">
+    <div className="row">
+        <form className="col s12">
+          <div className="row">
+            <div className="input-field col s6">
+              <input  id="company" type="text" className="validate" />
+              <label htmlFor="company">Company</label>
+            </div>
+            <div className="input-field col s6">
+              <input id="sector" type="text" className="validate" />
+              <label htmlFor="sector">Sector</label>
             </div>
           </div>
-        </div> */}
+          <div className="row">
+            <div className="input-field col s12">
+              <input  id="company-description" type="text" className="validate" />
+              <label htmlFor="company-description">Company Description</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s6">
+              <input id="Role" type="password" className="validate" />
+              <label htmlFor="Role">Role</label>
+            </div>
+          
+            <div className="input-field col s6">
+              <input id="city" type="text" className="validate" />
+              <label htmlFor="city">City</label>
+            </div>
+          </div>
+          <div className="row">
+            <div className="input-field col s12">
+              <input  id="job-link" type="text" className="validate" />
+              <label htmlFor="job-link">Job Posting Link</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
               <div className="container pref-footer">
               <h6>
               This is a free resource for everyone. Any questions, comments, or collaboration opportunities please 
