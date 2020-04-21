@@ -7,6 +7,13 @@ nav .brand-logo {
   line-height: 2rem;
 }
 
+.main-text{
+  padding: 15px;
+}
+
+.main-text h1{
+  font-size: 58px;
+}
 .main .sidenav-trigger {
   color: #26a69a;
 }
@@ -14,13 +21,28 @@ nav .brand-logo {
 .main h2{
   font-weight: bold;
 }
-
+.card{
+  background: #A4A1CB !important;
+  width: auto;
+}
+.card-title{
+  font-size: 48px !important;
+  font-weight: 400 !important;
+}
 .main .section{
   max-height: 400px;
 }
+
+.text-bold-extra{
+  font-weight: bold;
+}
+
+.text-bold{
+  font-weight: 400;
+}
 .main .btn{
   height: 60px;
-  width: 180px;
+  width: 100%;
   border-radius: 10px;
   font-size: 100%;
   text-align: center;
@@ -68,7 +90,7 @@ nav .brand-logo {
   font-size: inherit;
 }
  h6{
-  font-weight:500;
+  font-weight:400;
 }
 footer.page-footer {
   margin: 0;

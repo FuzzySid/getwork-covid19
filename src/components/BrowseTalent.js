@@ -13,13 +13,13 @@ const BrowseTalent=()=>{
         <div className="browse_talent">
             <div className=" title-box">
                 <div className="row">
-                    <div className="col s4 float-left">
+                    <div className="col m4 s12 float-left">
                         <a className="btn modal-trigger" href="#modal1">Add Yourself</a>
                     </div>
-                    <div className="col s4 center-align">
+                    <div className="col m4 s12 center-align">
                         <h5 className="">Talent Affected by Covid19</h5>
                     </div>
-                    <div className="col s4 float-right">
+                    <div className="col m4 s12 float-right">
                     <div class="nav-wrapper">
                             <form>
                                 <div class="input-field">

@@ -14,31 +14,69 @@ const Main=()=>{
     return(
         <div className="main">
      
-        <div id="index-banner" className="parallax-container">
-          <div className="section col s12 m12">
-            <div className="container">
-              
-              <h1 className="header center teal-text text-lighten-2"></h1>
-              <div className="row center">
-                <h2 className="header col s12 black-text">
-                We're connecting talent affected by layoffs due to Coronavirus, with employers looking to hire.</h2>
+        <div id="index-banner" className="container">
+         
+          {/* <div class="row">
+            <div class="col s12 m12">
+              <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                  <span class="card-title">GetWork's Covid 19 Initiative</span>
+                  <p>We're connecting talent affected by layoffs due to Coronavirus, with employers looking to hire.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                  <a href="#">This is a link</a>
+                </div>
               </div>
-              {/* <div className="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-              </div> */}
-              <br /><br />
+            </div>
+          </div> */}
+          <div class="row">
+              <div class="col s12 m12">
+                <div class="main-text">
+                 <h1 className="text-bold-extra">GetWork's Covid 19 Initiative</h1>
+              
+                 <h3 className="text-bold">We're connecting talent affected by layoffs due to Coronavirus, with employers looking to hire.</h3>
+
+
+                </div>
+              </div>
+      </div>
+        </div>
+            <div class="row container">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">For Employers</span>
+            
+            </div>
+            <div class="card-action">
+              <a href="#">POST A JOB</a>
+              <Link to="/browse/talent" >BROWSE TALENT</Link>
+                
             </div>
           </div>
-          {/* <div className="parallax"><img src="background1.jpg" alt="Unsplashed background img 1" /></div> */}
         </div>
-        <div className="container">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">For Talent</span>
+            
+            </div>
+            <div class="card-action">
+              <a href="#">ADD YOURSELF</a>
+              <Link to="/browse/roles" >BROWSE OPEN ROLES</Link>
+            </div>
+          </div>
+        </div>
+      </div>  
+                
+        {/* <div className="container">
           <div className="section">
-            {/*   Icon Section   */}
+        
             <div className="row">
               <div className="col s12 m6">
                 <div className="icon-block">
-                  {/* <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2> */}
-                  <h5 className="center  black-text">For Employers</h5>
+                  <h6 className="center  black-text">For Employers</h6>
                   <br/>
                  <div className="col m6 nav-btn">
                    <a className="btn">POST A JOB</a>
@@ -50,8 +88,7 @@ const Main=()=>{
               </div>
               <div className="col s12 m6 center-align">
                 <div className="icon-block">
-                  {/* <h2 className="center brown-text"><i className="material-icons">group</i></h2> */}
-                  <h5 className="center black-text">For Talent</h5>
+                  <h6 className="center black-text">For Talent</h6>
                   <br/>
                   <div className="col m6 nav-btn">
                    <a href="#"className="btn">ADD YOURSELF</a>
@@ -64,7 +101,7 @@ const Main=()=>{
          
             </div>
           </div>
-        </div>
+        </div> */}
               <div className="container pref-footer">
               <h6>
               This is a free resource for everyone. Any questions, comments, or collaboration opportunities please 
@@ -73,7 +110,7 @@ const Main=()=>{
               </div>
               
 
-            {/* <Footer></Footer> */}
+          
         </div>
         
     )
