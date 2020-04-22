@@ -88,10 +88,10 @@ const Main=()=>{
    
     </div>
   
-    <div class="modal-footer">
+    {/* <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div>
+    </div> */}
   </div>
               <div className="container pref-footer">
               <h6>
