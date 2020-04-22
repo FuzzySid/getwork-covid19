@@ -1,16 +1,67 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import './BrowseRoles.css';
 import M from 'materialize-css';
+import axios from 'axios';
 import JobForm from '../Forms/JobForm';
 
 const BrowseRoles=()=>{
+  let [data,setData]=useState([]);
+  let tableData=[];
+  useEffect(()=>{
+      
+    const fetchData=async()=>{
+      
+      let arr=[];
+     const result=await axios.get('http://3.14.202.69:8000/get_talent_connect_role')
+        .then(res=>{
+        console.log('res from role: ',res.data.data);
+        res.data.data.forEach(resData=>{
+          arr.push(resData);
+        })
+       
+        })
+        .catch(err=>{
+          console.log(err);
+        })
+        console.log('arr: ',arr);
+       
+        setData(arr)
+      }
+      fetchData();
+    },[])
     useEffect(()=>{
         var elems = document.querySelectorAll('.modal');
         M.Modal.init(elems, {});
         
             
     })
-    return(
+    if(data.length>0){
+      //console.log('data: ',arr,'type of ',typeof(arr));
+      data.forEach(el=>{
+        console.log('el: ',el)
+        tableData.push(
+           <tr>
+              <td>{el.createdAt}</td>
+              <td>{el.company_name}</td>
+              <td>-</td>
+              <td>{el.description}</td>
+              <td>{el.job_role}</td>
+              <td>{el.hiring_type}</td>
+              <td>{el.city}</td>
+              <td>{el.point_of_contact}</td>
+              <td>{el.job_link}</td>
+             
+            </tr>
+            
+        )
+      })
+    }
+if(data.length>0)
+console.log('Data: ',data);
+console.log('table data: ',tableData);
+if(tableData.length==0) return (<div>Loading...</div>)
+else
+  return(
                <div className="browse_roles">
             <div className="title-box">
                 <div className="row">
@@ -56,7 +107,7 @@ const BrowseRoles=()=>{
         </thead>
 
         <tbody>
-          <tr>
+          {/* <tr>
              <td>1/2/19</td>
             <td>Gintech</td>
             <td>IT</td>
@@ -67,8 +118,8 @@ const BrowseRoles=()=>{
             <td>-</td>
             <td>tempurl.com</td>
            
-          </tr>
-        
+          </tr> */}
+        {tableData}
         </tbody>
       </table>
             </div>

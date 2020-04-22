@@ -1,17 +1,73 @@
-import React,{useEffect} from 'react';
+import React,{useEffect,useState} from 'react';
 import './BrowseTalent.css';
 import M from 'materialize-css';
 import TalentForm from '../Forms/TalentForm';
+import axios from 'axios';
+
 
 const BrowseTalent=()=>{
+    let [data,setData]=useState([]);
+    let tableData=[];
+
     useEffect(()=>{
-        var elems = document.querySelectorAll('.modal');
-        M.Modal.init(elems, {});
+      
+      const fetchData=async()=>{
         
-            
-    })
-    return(
+        let arr=[];
+       const result=await axios.get('http://3.14.202.69:8000/get_talent_profile')
+          .then(res=>{
+          console.log('res from talent: ',res.data.data);
+          res.data.data.forEach(resData=>{
+            arr.push(resData);
+          })
+         
+          })
+          .catch(err=>{
+            console.log(err);
+          })
+          console.log('arr: ',arr);
+         
+          setData(arr)
+        }
+        fetchData();
+      },[])
+      useEffect(()=>{
+        var elems = document.querySelectorAll('.modal');
+      M.Modal.init(elems, {});
+      })
+  if(data.length>0){
+          //console.log('data: ',arr,'type of ',typeof(arr));
+          data.forEach(el=>{
+            console.log('el: ',el)
+            tableData.push(
+               <tr>
+                  <td>{el.createdAt}</td>
+                  <td>{el.name}</td>
+                  <td>{el.is_student}</td>
+                  <td>{el.college_name}</td>
+                  <td>{el.specialization}</td>
+                  <td>-</td>
+                  <td>{el.company_sector}</td>
+                  <td>{el.role}</td>
+                  <td>{el.city}</td>
+                  <td>{el.is_relocation}</td>
+                  <td>{el.email}</td>
+                  <td>{el.linkedin_url}</td>
+                  {/* <td>9891100201</td> */}
+                </tr>
+                
+            )
+          })
+        }
+  if(data.length>0)
+  console.log('Data: ',data);
+  console.log('table data: ',tableData);
+  if(tableData.length==0) return (<div>Loading...</div>)
+  else
+  return(
+     
         <div className="browse_talent">
+        {/* <button onClick={()=>{console.log(data)}}></button> */}
             <div className=" title-box">
                 <div className="row">
                     <div className="col m4 s12 float-left">
@@ -60,21 +116,8 @@ const BrowseTalent=()=>{
         </thead>
 
         <tbody>
-          <tr>
-            <td>1/2/19</td>
-            <td>Harry</td>
-            <td>Student</td>
-            <td>AISCT</td>
-            <td>Computer Networks</td>
-            <td>-</td>
-            <td>IT</td>
-            <td>-</td>
-            <td>Hamburg</td>
-            <td>Yes</td>
-            <td>abc@gmail.com</td>
-            <td>tempurl.com</td>
-            {/* <td>9891100201</td> */}
-          </tr>
+    
+          {tableData}
           
         </tbody>
       </table>
