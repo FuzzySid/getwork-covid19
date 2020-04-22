@@ -62,8 +62,8 @@ const BrowseTalent=()=>{
   if(data.length>0)
   console.log('Data: ',data);
   console.log('table data: ',tableData);
-  if(tableData.length==0) return (<div>Loading...</div>)
-  else
+  // if(tableData.length==0) return (<div>Loading...</div>)
+  // else
   return(
      
         <div className="browse_talent">
