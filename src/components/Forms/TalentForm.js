@@ -17,13 +17,19 @@ const TalentForm=()=>{
                 <label htmlFor="name">Name</label>
               </div>
               <div className="input-field inline col s6">
-              <div className="col s6">
+                <div className="row">
+                  <div className="col m2">
+                    <label><h6>Currently</h6></label>
+                  </div>
+                </div>
+              <div className="col s12 m5">
+                 
               <label>
                   <input name="group1" type="radio" />
                   <span>Working</span>
               </label>
               </div>
-             <div className="col s6 inline-field">
+             <div className="col s12 m5 ">
              <label>
                   <input name="group1" type="radio"/>
                   <span>Student</span>
@@ -45,8 +51,15 @@ const TalentForm=()=>{
               </div>
             
               <div className="input-field col s6">
-                <input id="Sector" type="text" className="validate" />
-                <label htmlFor="Sector">Sector</label>
+                          <select id="sector">
+                  <option value="" disabled selected>Sector</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+                <label htmlFor="sector">Sector</label>
+                {/* <input id="Sector" type="text" className="validate" />
+                <label htmlFor="Sector">Sector</label> */}
               </div>
             </div>
             <div className="row">

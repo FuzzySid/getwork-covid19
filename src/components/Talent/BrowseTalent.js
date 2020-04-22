@@ -32,6 +32,8 @@ const BrowseTalent=()=>{
         fetchData();
       },[])
       useEffect(()=>{
+        var sel = document.querySelectorAll('select');
+        M.FormSelect.init(sel, {});
         var elems = document.querySelectorAll('.modal');
       M.Modal.init(elems, {});
       })
@@ -67,7 +69,7 @@ const BrowseTalent=()=>{
   return(
      
         <div className="browse_talent">
-        {/* <button onClick={()=>{console.log(data)}}></button> */}
+ 
             <div className=" title-box">
                 <div className="row">
                     <div className="col m4 s12 float-left">
@@ -77,10 +79,10 @@ const BrowseTalent=()=>{
                         <h5 className="">Talent Affected by Covid19</h5>
                     </div>
                     <div className="col m4 s12 float-right">
-                    <div class="nav-wrapper">
+                    <div class="nav-wrapper ">
                             <form>
                                 <div class="input-field">
-                                <input id="search" type="search" placeholder="Search for jobs by status" required/>
+                                <input id="search" type="search" placeholder="Search for jobs by sector" required/>
                                 <label class="label-icon" for="search"><i class="material-icons">search</i>
 
                                 </label>
@@ -93,7 +95,13 @@ const BrowseTalent=()=>{
                    
                     
                 </div>
-                
+                <div className="row">
+                  
+                        <a className="btn filter-btn" >Filter Students</a>
+                    
+                        <a className="btn filter-btn " >Filter Working</a>
+                   
+                  </div>
             </div>
             <div className="table container">
             <table className="responsive">
@@ -101,7 +109,7 @@ const BrowseTalent=()=>{
           <tr>
               <th>Date Added</th>
               <th>Name</th>
-              <th>I'm Studying/Working</th>
+              <th>Studying/Working</th>
               <th>College Name</th>
               <th>Specialization</th>
               <th>Company</th>
@@ -124,7 +132,7 @@ const BrowseTalent=()=>{
             </div>
 
   <div id="add-talent" class="modal">
-    <div class="modal-content">
+    <div class="modal-content talent-modal">
       <TalentForm></TalentForm>
     </div>
   

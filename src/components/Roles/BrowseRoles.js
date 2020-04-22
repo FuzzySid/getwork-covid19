@@ -96,42 +96,28 @@ console.log('table data: ',tableData);
           <tr className="field-names">
               <th>Date Posted</th>
               <th>Company</th>
-              <th>Company Sector</th>
-              <th>Company Description</th>
+              <th> Sector</th>
+              <th>Description</th>
               <th>Role/Title</th>
               <th>Hiring</th>
               <th>Location</th>
               <th>Point of Contact</th>
-              <th>Job Description Link</th>
+              <th>Job Link</th>
           </tr>
         </thead>
 
         <tbody>
-          {/* <tr>
-             <td>1/2/19</td>
-            <td>Gintech</td>
-            <td>IT</td>
-            <td>blah blah blah</td>
-            <td>Data Analyst</td>
-            <td>Intern</td>
-            <td>Amsterdam</td>
-            <td>-</td>
-            <td>tempurl.com</td>
-           
-          </tr> */}
+      
         {tableData}
         </tbody>
       </table>
             </div>
             <div id="job-post" class="modal">
-    <div class="modal-content">
+    <div class="modal-content role-modal">
       <JobForm></JobForm>
     
     </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div>
+  
   </div>
         
         </div>

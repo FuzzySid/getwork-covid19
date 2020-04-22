@@ -28,12 +28,19 @@ nav .brand-logo {
   background: #A4A1CB !important;
   width: auto;
 }
-.card-title{
-  font-size: 24px !important;
-  font-weight: 400 !important;
+.btn-title{
+  font-size: 20px;
 }
 .main .section{
   max-height: 400px;
+}
+
+.btn-box-talent,.btn-box-roles{
+  margin-top: 20px;
+}
+
+.title-container{
+  text-align: center;
 }
 
 .text-bold-extra{
@@ -47,10 +54,7 @@ nav .brand-logo {
 .input-field{
   margin: 0px 0px !important;
 }
-.modal{
-  max-height: 100% !important;
-  overflow-y: hidden !important;
-}
+
 .modal-content{
   margin-bottom: 0px !important;
   padding-bottom: 0px !important;
@@ -61,16 +65,6 @@ nav .brand-logo {
 .text-bold{
   font-weight: 400;
 }
-.main .big-btn{
-  height: 60px;
-  width: 80%;
-  border-radius: 10px;
-  font-size: 14px;
-  text-align: center;
-  margin: auto;
-  /* line-height: 1rem; */
-  padding: 10px 0px;
-}
 
 .main-btn-text{
   width: 100px;
@@ -78,12 +72,10 @@ nav .brand-logo {
   text-overflow: ellipsis;
 }
 .btn-box{
-  margin: 10px 0px;
+  margin: 5px 0px;
 }
 
-/* .btn-big-box{
-  margin: 0px 5px;
-} */
+
 .main h5{
   font-weight: 500;
 }
@@ -125,4 +117,11 @@ nav .brand-logo {
 }
 footer.page-footer {
   margin: 0;
+}
+
+.social-icons ul li {
+  display:inline-block;
+  vertical-align: top;
+  width: auto;
+  padding: 5px; 
 }
