@@ -1,9 +1,9 @@
 import React from 'react';
 import {Switch, BrowserRouter, Route} from 'react-router-dom'
 import './App.css';
-import Main from './components/Main';
-import BrowseTalent from './components/BrowseTalent';
-import BrowseRoles from './components/BrowseRoles';
+import Main from './components/Main/Main';
+import BrowseTalent from './components/Talent/BrowseTalent';
+import BrowseRoles from './components/Roles/BrowseRoles';
 import Navbar from './components/ui/Navbar';
 
 function App() {
