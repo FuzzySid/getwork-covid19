@@ -24,7 +24,28 @@ const JobForm=()=>{
       //console.log('details',Data)
   }
   const sendData=()=>{
-    //axios.post
+    let i=1;
+    axios.post('http://3.14.202.69:8000/add_talent_connect_role',{
+                company_name:Data.company,
+                description:Data.company_description,
+                company_sector:Data.sector,
+                job_role:Data.role,
+                hiring_type:Data.hiring,
+                city:Data.city,
+                point_of_contact:Data.point_of_contact,
+                job_link:Data.job_link,
+                is_job_open:i,
+                createdAt:new Date(),
+                updatedAt:new Date()
+      
+
+    })
+      .then(res=>{
+        console.log(res);
+      })
+      .catch(err=>{
+        console.log(err);
+      })
   }
   const handleSubmit=(e)=>{
     e.preventDefault();
@@ -69,13 +90,13 @@ const JobForm=()=>{
               <div className="col s12 m5">
                  
               <label>
-                  <input name="group1" id="hiring" type="radio" value="intern"/>
+                  <input name="group1" id="hiring" type="radio" value="INTERN"/>
                   <span>Intern</span>
               </label>
               </div>
              <div className="col s12 m5 ">
              <label>
-                  <input name="group1" id="hiring" type="radio" value="full-time"/>
+                  <input name="group1" id="hiring" type="radio" value="FULL_TIME"/>
                   <span>Full-Time</span>
              </label>
              </div>
