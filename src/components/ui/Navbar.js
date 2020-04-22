@@ -9,10 +9,10 @@ const Navbar=()=>{
 })
     return(
       <div className="navbar">
-      <nav className="white" role="navigation">
+      <nav className="" role="navigation">
           <div className="nav-wrapper container">
           
-            <ul className="hide-on-med-and-down center">
+            <ul className="hide-on-med-and-down right">
                <li><Link  to="/">Home</Link></li>
               <li><Link  to="/browse/talent">Browse Talent</Link></li>
               <li><Link  to="/browse/roles">Browse Opportunities</Link></li>

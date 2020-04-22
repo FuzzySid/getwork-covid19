@@ -47,14 +47,14 @@ const BrowseTalent=()=>{
               <th>I'm Studying/Working</th>
               <th>College Name</th>
               <th>Specialization</th>
-              <th>name</th>
-              <th>status</th>
-              <th>Specialization/Title</th>
+              <th>Company</th>
               <th>Sector</th>
+              <th>Role/Title</th>
+              <th>City</th>
               <th>Open to Relocating?</th>
-              <th>Linked URL/Resume</th>
               <th>Email</th>
-              <th>Phone</th>
+              <th>Linked URL/Resume</th>
+              {/* <th>Phone</th> */}
           </tr>
         </thead>
 
@@ -70,32 +70,38 @@ const BrowseTalent=()=>{
             <td>-</td>
             <td>Hamburg</td>
             <td>Yes</td>
-            <td>tempurl.com</td>
             <td>abc@gmail.com</td>
-            <td>9891100201</td>
+            <td>tempurl.com</td>
+            {/* <td>9891100201</td> */}
           </tr>
           
         </tbody>
       </table>
             </div>
 
-    <div id="add-talent" class="modal">
+  <div id="add-talent" class="modal">
     <div class="modal-content">
+    <h6 className="text-bold-extra left">Add your details
+      
+    </h6>
+
+      <p className="left"> &nbsp; (All fields are mandatory)</p>
     <div className="row">
+      
         <form className="col s12">
           <div className="row">
-            <div className="input-field col s6">
+            <div className="input-field inline col s6">
               <input  id="name" type="text" className="validate" />
               <label htmlFor="name">Name</label>
             </div>
-            <div className="input-field col s6">
+            <div className="input-field inline col s6">
             <div className="col s6">
             <label>
                 <input name="group1" type="radio" />
                 <span>Working</span>
             </label>
             </div>
-           <div className="col s6">
+           <div className="col s6 inline-field">
            <label>
                 <input name="group1" type="radio"/>
                 <span>Student</span>
@@ -105,7 +111,7 @@ const BrowseTalent=()=>{
             </div>
           </div>
           <div className="row">
-            <div className="input-field col s12">
+            <div className="input-field inline col s12">
               <input  id="college-name" type="text" className="validate" />
               <label htmlFor="college-name">College Name</label>
             </div>
@@ -122,13 +128,12 @@ const BrowseTalent=()=>{
             </div>
           </div>
           <div className="row">
-            <div className="input-field col s12">
+            <div className="input-field col s12 m6">
               <input  id="Role" type="text" className="validate" />
               <label htmlFor="Role">Job Posting Link</label>
             </div>
-          </div>
-          <div className="row">
-            <div className="input-field col s12">
+         
+            <div className="input-field col s12 m6">
               <input  id="Location" type="text" className="validate" />
               <label htmlFor="Location">Location</label>
             </div>
@@ -169,12 +174,15 @@ const BrowseTalent=()=>{
         </form>
       </div>
     </div>
+  
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
     </div>
   </div>
-        </div>
+       
+       
+ </div>
     )
 }
 

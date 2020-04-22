@@ -71,8 +71,12 @@ const BrowseRoles=()=>{
         </tbody>
       </table>
             </div>
-        <div id="job-post" class="modal">
+            <div id="job-post" class="modal">
     <div class="modal-content">
+      <h6 className="text-bold-extra left">Job Posting</h6>
+      <p className="left">Fill out your details (all fields are required for submission). If you have multiple 
+        postings you would like to add 
+        you can fill out the csv template file here and email to katie@torchcapital.vc</p>
     <div className="row">
         <form className="col s12">
           <div className="row">
