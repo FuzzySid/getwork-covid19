@@ -97,9 +97,9 @@ const BrowseTalent=()=>{
                 </div>
                 <div className="row">
                   
-                        <a className="btn filter-btn" >Filter Students</a>
+                        <a className="btn filter-btn disabled" >Filter Students</a>
                     
-                        <a className="btn filter-btn " >Filter Working</a>
+                        <a className="btn filter-btn disabled" >Filter Working</a>
                    
                   </div>
             </div>
@@ -136,10 +136,7 @@ const BrowseTalent=()=>{
       <TalentForm></TalentForm>
     </div>
   
-    {/* <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
-    </div> */}
+   
   </div>
        
        

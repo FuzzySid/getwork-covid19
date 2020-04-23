@@ -1,7 +1,9 @@
 import React,{useEfect, useState} from 'react';
+import {useAlert} from 'react-alert';
 import axios from 'axios';
 
 const TalentForm=()=>{
+  const alert=useAlert();
   const initState={
     name:'',
     status:'',
@@ -25,10 +27,35 @@ const TalentForm=()=>{
       })
      
     }
+    const validate=()=>{
+      let isEmpty=false;
+      let error=false;
+      console.log('Details: ',Data);
+      Object.values(Data).forEach(val=>{
+        if(val==''){
+          isEmpty=true;
+          error=true;
+        }
+  
+      })
+     
+      return error;
+    }
     const handleSubmit=(e)=>{
       e.preventDefault();
-      console.log('Details: ',Data);
-      sendData();
+      
+      //document.querySelector('form').reset();
+      if(!validate()){
+      console.log('sending data');
+      //sendData();
+      document.querySelector('form').reset();
+      alert.success('Profile added!');
+      return;
+      }
+      else{
+        alert.error('Please fill all the fields first!');
+        return;
+      }
     }
     const sendData=()=>{
       axios.post('http://3.14.202.69:8000/add_talent_profile',{
@@ -55,12 +82,7 @@ const TalentForm=()=>{
         })
 
 
-          //       “name”:"RAHUL VEERWAL",
-          // "Is_student":1,
-          // "college_name":"MNNIT",
-          // "specialization":"CHEMEICAL",
-          // "company_sector":"STRAUYGGNGV",
-          // "role":"FKIFKRDFNGKVLR  REJGLRELGLRVF","city":"LUVKNFJF","is_relocation":1,"linkedin_url":"http://www.linkedin.com","email":"sumignvkdngfl@gmail.com","phone":"8875767887"
+          
 
   
   }
@@ -88,13 +110,13 @@ const TalentForm=()=>{
               <div className="col s12 m5">
                  
               <label>
-                  <input id="status" name="group1" type="radio" value="working"/>
+                  <input id="status" name="group1" type="radio" value="working" className="validate"/>
                   <span>Working</span>
               </label>
               </div>
              <div className="col s12 m5 ">
              <label>
-                  <input  id="status" name="group1" type="radio" value="student"/>
+                  <input  id="status" name="group1" type="radio" value="student" className="validate"/>
                   <span>Student</span>
              </label>
              </div>
@@ -124,7 +146,7 @@ const TalentForm=()=>{
             </div>
             <div className="row">
               <div className="input-field col s12 m6">
-                <input  id="role" type="text" className="validate" />
+                <input  id="role" type="url" className="validate" />
                 <label htmlFor="role">Job Posting Link</label>
               </div>
            
@@ -136,7 +158,7 @@ const TalentForm=()=>{
             <div className="row">
               <div className="input-field col s6">
               <label>
-                  <input id="open_to_relocating" type="checkbox" class="filled-in" value="Yes" />
+                  <input id="open_to_relocating" type="checkbox" class="filled-in" value="Yes" className="validate"/>
                   <span>Open to relocating?</span>
               </label>
                 
@@ -146,10 +168,10 @@ const TalentForm=()=>{
                       <div class="file-field input-field">
                       <div class="btn">
                           <span>LinkedIn URL/Resume</span>
-                          <input type="file"/>
+                          <input type="file" id="resume_url"/>
                       </div>
                       <div class="file-path-wrapper">
-                          <input class="file-path validate" type="text" id="resume_url"/>
+                          <input class="file-path validate" type="text" onChange={handleChange}/>
                       </div>
                   </div>
              
@@ -157,7 +179,7 @@ const TalentForm=()=>{
             </div>
             <div className="row">
               <div className="input-field col s6">
-                <input  id="email" type="text" className="validate" />
+                <input  id="email" type="email" className="validate" />
                 <label htmlFor="email">Email</label>
               </div>
            
@@ -170,7 +192,7 @@ const TalentForm=()=>{
         </div>
         <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-      <a onClick={handleSubmit} class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      <a onClick={handleSubmit} class="modal-close waves-effect waves-green btn">Submit</a>
     </div>
         </div>
     )

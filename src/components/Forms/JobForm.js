@@ -1,7 +1,9 @@
 import React,{useEfect,useState} from 'react';
+import {useAlert} from 'react-alert';
 import axios from 'axios';
 
 const JobForm=()=>{
+  const alert=useAlert();
   const initState={
     company:'',
     sector:'',
@@ -47,10 +49,35 @@ const JobForm=()=>{
         console.log(err);
       })
   }
+  const validate=()=>{
+    let isEmpty=false;
+    let error=false;
+    console.log('Details: ',Data);
+    Object.values(Data).forEach(val=>{
+      if(val==''){
+        isEmpty=true;
+        error=true;
+      }
+
+    })
+   
+    return error;
+  }
   const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log('Details: ',Data);
-    sendData();
+    
+    //document.querySelector('form').reset();
+    if(!validate()){
+    console.log('sending data');
+    //sendData();
+    document.querySelector('form').reset();
+    alert.success('Job Posting added!');
+    return;
+    }
+    else{
+      alert.error('Please fill all the fields first!');
+      return;
+    }
   }
     return(
         <div className="job-form">
@@ -59,27 +86,28 @@ const JobForm=()=>{
         postings you would like to add 
         you can fill out the csv template file here and email to katie@torchcapital.vc</p>
     <div className="row">
-        <form className="col s12" onChange={handleChange}>
+        <form className="col s12" class="job-form" onChange={handleChange}>
           <div className="row">
             <div className="input-field col s6">
-              <input  id="company" type="text" className="validate" />
-              <label htmlFor="company">Company</label>
+              <input  id="company" type="text" required="" aria-required="true" className="validate" />
+              <label data-error="wrong" data-success="right" htmlFor="company">Company</label>
+              {/* <span class="helper-text" data-error="wrong" data-success="right">Please fill this field</span> */}
             </div>
             <div className="input-field col s6">
-              <input id="sector" type="text" className="validate" />
-              <label htmlFor="sector">Sector</label>
+              <input id="sector" type="text" required="" aria-required="true" className="validate" />
+              <label data-error="wrong" data-success="right"  htmlFor="sector">Sector</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s12">
-              <input  id="company_description" type="text" className="validate" />
-              <label htmlFor="company_description">Company Description</label>
+              <input  id="company_description" required="" aria-required="true" type="text" className="validate" />
+              <label data-error="wrong" data-success="right"  htmlFor="company_description">Company Description</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s6">
-              <input id="role" type="text" className="validate" />
-              <label htmlFor="role">Role</label>
+              <input id="role" type="text" required="" aria-required="true" className="validate" />
+              <label data-error="wrong" data-success="right" htmlFor="role">Role</label>
             </div>
             <div className="input-field inline col s6">
                 <div className="row">
@@ -103,17 +131,17 @@ const JobForm=()=>{
               
               </div>
             <div className="input-field col s6">
-              <input id="city" type="text" className="validate" />
+              <input id="city" type="text" required="" aria-required="true" className="validate" />
               <label htmlFor="city">City</label>
             </div>
           </div>
           <div className="row">
             <div className="input-field col s6">
-              <input  id="job_link" type="text" className="validate" />
+              <input  id="job_link" type="url" required="" aria-required="true" className="validate" />
               <label htmlFor="job_link">Job Posting Link</label>
             </div>
             <div className="input-field col s6">
-              <input  id=" point_of_contact" type="text" className="validate" />
+              <input  id="point_of_contact" required="" aria-required="true" type="text" className="validate" />
               <label htmlFor=" point_of_contact">Point of Contact</label>
             </div>
           </div>
@@ -121,7 +149,7 @@ const JobForm=()=>{
       </div>
       <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-      <a onClick={handleSubmit} class="modal-close waves-effect waves-green btn-flat">Submit</a>
+      <a onClick={handleSubmit} class="modal-close waves-effect waves-green btn">Submit</a>
     </div>
         </div>
     )

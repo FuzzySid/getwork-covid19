@@ -94,7 +94,7 @@ console.log('table data: ',tableData);
             <table className="responsive">
         <thead>
           <tr className="field-names">
-              <th>Date Posted</th>
+              <th> Date Posted  </th>
               <th>Company</th>
               <th> Sector</th>
               <th>Description</th>
