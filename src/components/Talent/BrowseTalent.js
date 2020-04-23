@@ -51,6 +51,15 @@ const BrowseTalent=()=>{
         //console.log(newArr);
         setDisplayData(newArr);
       }
+      const sortAlphabetically=(fieldName)=>{
+        let temp=[...displayData];
+       temp.sort(function(a, b){
+          if(a.name < b.name) { return -1; }
+          if(a.name > b.name) { return 1; }
+          return 0;
+      })
+      setDisplayData(temp);
+      }
   if(displayData.length>0){
           //console.log('data: ',arr,'type of ',typeof(arr));
           displayData.forEach(el=>{
@@ -110,7 +119,7 @@ const BrowseTalent=()=>{
                     
                 </div>
                 <div className="row">
-                  
+                        <a className="btn filter-btn" onClick={()=>{(sortAlphabetically('name'))}} >Sort</a>
                         <a className="btn filter-btn" onClick={()=>{filter(true)}} >Filter Students</a>
                     
                         <a className="btn filter-btn " onClick={()=>{filter(false)}} >Filter Working</a>
