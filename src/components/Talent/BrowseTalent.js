@@ -3,10 +3,12 @@ import './BrowseTalent.css';
 import M from 'materialize-css';
 import TalentForm from '../Forms/TalentForm';
 import axios from 'axios';
+import { filter } from 'minimatch';
 
 
 const BrowseTalent=()=>{
     let [data,setData]=useState([]);
+    let [displayData,setDisplayData]=useState([]);
     let tableData=[];
 
     useEffect(()=>{
@@ -28,6 +30,7 @@ const BrowseTalent=()=>{
           console.log('arr: ',arr);
          
           setData(arr)
+          setDisplayData(arr);
         }
         fetchData();
       },[])
@@ -37,9 +40,20 @@ const BrowseTalent=()=>{
         var elems = document.querySelectorAll('.modal');
       M.Modal.init(elems, {});
       })
-  if(data.length>0){
+      const filter=(filterType)=>{
+        //console.log(data);
+        let newArr=data.filter(entry=>{
+          if(filterType)
+          return entry.is_student;
+          else
+          return !entry.is_student;
+        })
+        //console.log(newArr);
+        setDisplayData(newArr);
+      }
+  if(displayData.length>0){
           //console.log('data: ',arr,'type of ',typeof(arr));
-          data.forEach(el=>{
+          displayData.forEach(el=>{
             console.log('el: ',el)
             tableData.push(
                <tr>
@@ -97,9 +111,9 @@ const BrowseTalent=()=>{
                 </div>
                 <div className="row">
                   
-                        <a className="btn filter-btn disabled" >Filter Students</a>
+                        <a className="btn filter-btn" onClick={()=>{filter(true)}} >Filter Students</a>
                     
-                        <a className="btn filter-btn disabled" >Filter Working</a>
+                        <a className="btn filter-btn " onClick={()=>{filter(false)}} >Filter Working</a>
                    
                   </div>
             </div>
