@@ -71,7 +71,7 @@ const JobForm=()=>{
     console.log('sending data');
     //sendData();
     document.querySelector('form').reset();
-    alert.success('Job Posting added!');
+    alert.success('Job Posting added! Please refresh page to see updates.');
     return;
     }
     else{

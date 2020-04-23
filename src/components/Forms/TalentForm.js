@@ -49,7 +49,7 @@ const TalentForm=()=>{
       console.log('sending data');
       //sendData();
       document.querySelector('form').reset();
-      alert.success('Profile added!');
+      alert.success('Profile added! Please refresh page to see updates');
       return;
       }
       else{
